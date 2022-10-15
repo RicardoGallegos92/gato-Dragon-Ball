@@ -1,0 +1,22 @@
+#linea{
+    display: flex;
+    justify-content: center;
+    background-color: green;
+}
+
+button{
+    width: 100px;
+    height: 100px;
+    background-color: whitesmoke;
+    cursor: pointer;
+    box-shadow: 1px 1px 0px 0px, 2px 2px;
+    font-size: 9rem;
+}
+
+#reset{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    width: 10rem;
+    height: 5rem;
+}

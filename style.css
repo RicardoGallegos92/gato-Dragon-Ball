@@ -1,0 +1,70 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+}
+body{
+    background-color: black;
+}
+
+footer{
+    width: 95%;
+    text-align: right;
+    background-color: yellow;
+    margin: 0 auto;
+}
+
+footer a{
+    font-size: 2rem;
+}
+
+#titulo{
+    width: 95%;
+    margin: 0 auto;
+    font-family: Saiyan;
+    color: red;
+    text-align: center;
+    background-color: yellow;
+    border-radius: 50px;
+    border: 15px orange dotted;
+}
+
+#titulo div{
+    font-size: 6rem;
+}
+
+banner{
+    font-family: Saiyan-Sans;
+    display: inline-flex;
+    width: 99%;
+    background-image:
+    url('https://pbs.twimg.com/media/FYJFcpAXoAQ7qf0.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 550px;
+}
+
+figure{
+    font-size: 4rem;
+    width: 33.3%;
+    text-align: center;
+}
+
+figure img{
+    object-fit:scale-down;
+    width: 90%;
+    height: 90%;
+}
+
+button{
+    height: 100px;
+    width: 100px;
+}
+
+@font-face {
+    font-family: 'Saiyan';
+    src: url('./font/Saiyan-Sans.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
