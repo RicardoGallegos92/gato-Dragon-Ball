@@ -8,22 +8,31 @@ const button7 = document.getElementById("button7");
 const button8 = document.getElementById("button8");
 const button9 = document.getElementById("button9");
 const reset   = document.getElementById("reset");
+const gamezone= document.getElementById("tiktaktoe");
 
 var x='X';
 var o='O';
 var turno = 1;
-var p1=0;
-var p2=0;
-var winners = [123,456,789,147,258,369,159,357];
-/*
-var winners = [132,465,798,174,285,396,195,375];
-var winners = [213,546,879,417,528,639,519,537];
-var winners = [231,564,897,471,582,693,591,573];
-var winners = [312,645,978,714,825,936,915,735];
-var winners = [321,654,987,741,852,963,951,753];
-*/
+var p1=[];
+var p2=[];
+// Combinaciones victoriosas
+var winners = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]];
 
+// Funciones de marcar casillas
+button1.onclick = function(){marca(button1, 1)};
+button2.onclick = function(){marca(button2, 2)};
+button3.onclick = function(){marca(button3, 3)};
+button4.onclick = function(){marca(button4, 4)};
+button5.onclick = function(){marca(button5, 5)};
+button6.onclick = function(){marca(button6, 6)};
+button7.onclick = function(){marca(button7, 7)};
+button8.onclick = function(){marca(button8, 8)};
+button9.onclick = function(){marca(button9, 9)};
+
+// Reseteamos el contador de turnos y las variables de las jugadas
 reset.onclick=function(){
+    p1=[];
+    p2=[];
     turno=1;
     button1.innerText ='';
     button2.innerText ='';
@@ -36,165 +45,49 @@ reset.onclick=function(){
     button9.innerText ='';
 };
 
-button1.onclick = function(){
-    switch(button1.innerText){
+// agregamos la nueva casilla marcada al jugador actual
+function marca(buttonplayer, casilla){
+    switch(buttonplayer.innerText){
         case x:
         case o:
             break;
         default:
             if(turno % 2 == 1 ){
-                button1.innerText = x;
-                p1=p1*10+1;
+                buttonplayer.innerText = x;
+                p1.push(casilla);
+                if(p1.length > 2){
+                    ganar(p1);
+                }
             }else{
-                button1.innerText = o;
-                p2=p2*10+1;
+                buttonplayer.innerText = o;
+                p2.push(casilla);
+                if(p2.length > 2){
+                    ganar(p2);
+                }
             }
-        turno = turno+1;
-    }
-    console.log(turno);
-};
-
-button2.onclick=function(){
-    switch(button2.innerText){
-        case x:
-        case o:
-            break;
-        default:
-            if(turno % 2 == 1 ){
-                button2.innerText = x;
-                p1=p1*10+2;
-            }else{
-                button2.innerText = o;
-                p2=p2*10+2;
-            }
-        turno = turno+1;
+        turno += 1;
     }
 };
 
-button3.onclick=function(){
-    switch(button3.innerText){
-        case x:
-        case o:
-            break;
-        default:
-            if(turno % 2 == 1 ){
-                button3.innerText = x;
-                p1=p1*10+3;
-            }else{
-                button3.innerText = o;
-                p2=p2*10+3;
+// Comprobamos si el player actual ganó
+function ganar(player){
+    player.sort();
+    for(i=0; i<8; i+=1){
+        if(player.includes(winners[i][0])){
+            if(player.includes(winners[i][1])){
+                if(player.includes(winners[i][2])){
+                    yagano();
+                }
             }
-        turno = turno+1;
+        }
     }
 };
 
-button4.onclick=function(){
-    switch(button4.innerText){
-        case x:
-        case o:
-            break;
-        default:
-            if(turno % 2 == 1 ){
-                button4.innerText = x;
-                p1=p1*10+4;
-            }else{
-                button4.innerText = o;
-                p2=p2*10+4;
-            }
-        turno = turno+1;
+// cambiamos la zona de juego completa por el texto de anuncio de ganador
+function yagano(){
+    if(turno % 2 == 1 ){
+        gamezone.innerHTML="Player 1 ganó";
+    }else{
+        gamezone.innerHTML="Player 2 ganó";
     }
 };
-
-button5.onclick=function(){
-    switch(button5.innerText){
-        case x:
-        case o:
-            break;
-        default:
-            if(turno % 2 == 1 ){
-                button5.innerText = x;
-                p1=p1*10+5;
-            }else{
-                button5.innerText = o;
-                p2=p2*10+5;
-            }
-        turno = turno+1;
-    }
-};
-
-button6.onclick=function(){
-    switch(button6.innerText){
-        case x:
-        case o:
-            break;
-        default:
-            if(turno % 2 == 1 ){
-                button6.innerText = x;
-                p1=p1*10+6;
-            }else{
-                button6.innerText = o;
-                p2=p2*10+6;
-            }
-        turno = turno+1;
-    }
-};
-
-button7.onclick=function(){
-    switch(button7.innerText){
-        case x:
-        case o:
-            break;
-        default:
-            if(turno % 2 == 1 ){
-                button7.innerText = x;
-                p1=p1*10+7;
-            }else{
-                button7.innerText = o;
-                p2=p2*10+7;
-            }
-        turno = turno+1;
-    }
-};
-
-button8.onclick=function(){
-    switch(button8.innerText){
-        case x:
-        case o:
-            break;
-        default:
-            if(turno % 2 == 1 ){
-                button8.innerText = x;
-                p1=p1*10+8;
-            }else{
-                button8.innerText = o;
-                p2=p2*10+8;
-            }
-        turno = turno+1;
-    }
-};
-
-button9.onclick=function(){
-    switch(button9.innerText){
-        case x:
-        case o:
-            break;
-        default:
-            if(turno % 2 == 1 ){
-                button9.innerText = x;
-                p1=p1*10+9;
-            }else{
-                button9.innerText = o;
-                p2=p2*10+9;
-            }
-        turno = turno+1;
-    }
-};
-
-function ganar(casillas){
-    var numeros=[];
-    for (i=0;i<5;i=i+1){
-        numeros[i]=casillas%10;
-        casillas=casillas/10;
-    }
-    numeros.sort();
-}

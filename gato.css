@@ -1,7 +1,22 @@
+#tiktaktoe{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    font-size: 15rem;
+    color: white;
+    background-color: rgb(211, 143, 17);
+}
+
 #linea{
     display: flex;
     justify-content: center;
     background-color: green;
+}
+
+#reset{
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 button{
