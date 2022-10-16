@@ -8,7 +8,8 @@ const button7 = document.getElementById("button7");
 const button8 = document.getElementById("button8");
 const button9 = document.getElementById("button9");
 const reset   = document.getElementById("reset");
-const gamezone= document.getElementById("tiktaktoe");
+const gamezone= document.getElementById("gamezone");
+const winzone = document.getElementById("ganador");
 
 var x='X';
 var o='O';
@@ -43,6 +44,8 @@ reset.onclick=function(){
     button7.innerText ='';
     button8.innerText ='';
     button9.innerText ='';
+    gamezone.style.display="flex";
+    winzone.innerText="";
 };
 
 // agregamos la nueva casilla marcada al jugador actual
@@ -85,9 +88,10 @@ function ganar(player){
 
 // cambiamos la zona de juego completa por el texto de anuncio de ganador
 function yagano(){
+    gamezone.style.display="none";
     if(turno % 2 == 1 ){
-        gamezone.innerHTML="Player 1 ganó";
+        winzone.innerText="Player 1 ganó";
     }else{
-        gamezone.innerHTML="Player 2 ganó";
+        winzone.innerText="Player 2 ganó";
     }
 };

@@ -20,19 +20,19 @@
             <img
             src="https://i.pinimg.com/originals/97/35/2a/97352a18b151610dc66f3f693e0b9196.png"
             alt="Goku">
-            <figcaption>Este es Goku</figcaption>
+            <figcaption>Goku</figcaption>
         </figure>
         <figure>
             <img
             src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/abbe87ea-79ce-45cd-99ba-3a975914627a/dbs82kg-848a36c2-9024-44fc-9b9d-715f2380cb53.png/v1/fill/w_1024,h_2579,strp/vegeta__universe_survival__3_facudibuja_by_facudibuja_dbs82kg-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjU3OSIsInBhdGgiOiJcL2ZcL2FiYmU4N2VhLTc5Y2UtNDVjZC05OWJhLTNhOTc1OTE0NjI3YVwvZGJzODJrZy04NDhhMzZjMi05MDI0LTQ0ZmMtOWI5ZC03MTVmMjM4MGNiNTMucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.kRRX-SU6N7ExVMrvSSCHVtq3p9xj5IrIwzOLNGrp07g"
             alt="Vegeta">
-            <figcaption>Este es Vegeta</figcaption>
+            <figcaption>Vegeta</figcaption>
         </figure>
         <figure>
             <img
             src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3817246c-a947-491c-ae2e-f214715c93cb/dbmu9y4-5eb5fce4-b8d6-4b8f-be20-e17aae887607.png/v1/fill/w_1280,h_2319,strp/gohan__3_by_urielalv_dbmu9y4-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjMxOSIsInBhdGgiOiJcL2ZcLzM4MTcyNDZjLWE5NDctNDkxYy1hZTJlLWYyMTQ3MTVjOTNjYlwvZGJtdTl5NC01ZWI1ZmNlNC1iOGQ2LTRiOGYtYmUyMC1lMTdhYWU4ODc2MDcucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.6BVlXWrOKf3Bt36BlV9E2r2EgDaEQcDyZ0kxWyWFhHY"
             alt="Gohan">
-            <figcaption>Este es Gohan</figcaption>
+            <figcaption>Gohan</figcaption>
         </figure>
     </banner>
 
@@ -41,26 +41,36 @@
     </audio>
     
     <!-- aquí empezará el juego (quizá se vaya a otro ".html") -->
-    <tiktaktoe id="tiktaktoe">
-        <linea1 id="linea">
-            <button type="button" id="button1"></button>
-            <button type="button" id="button2"></button>
-            <button type="button" id="button3"></button>
-        </linea1>
-        <linea2 id="linea">
-            <button type="button" id="button4"></button>
-            <button type="button" id="button5"></button>
-            <button type="button" id="button6"></button>
-        </linea2>
-        <linea3 id="linea">
-            <button type="button" id="button7"></button>
-            <button type="button" id="button8"></button>
-            <button type="button" id="button9"></button>
-        </linea3>
-        <linea4 id="linea">
-            <button type="button" id="reset">Reset Game</button>
-        </linea4>
+    <tiktaktoe id="gamezone">
+        <player1>
+            Player1 Space
+        </player1>
+        <lineasdejuego>
+            <linea1 id="linea">
+                <button type="button" id="button1"></button>
+                <button type="button" id="button2"></button>
+                <button type="button" id="button3"></button>
+            </linea1>
+            <linea2 id="linea">
+                <button type="button" id="button4"></button>
+                <button type="button" id="button5"></button>
+                <button type="button" id="button6"></button>
+            </linea2>
+            <linea3 id="linea">
+                <button type="button" id="button7"></button>
+                <button type="button" id="button8"></button>
+                <button type="button" id="button9"></button>
+            </linea3>
+        </lineasdejuego>
+        <player2>
+            Player2 Space
+        </player2>
     </tiktaktoe>
+    <linea4 id="linea">
+        <button type="button" id="reset">Reset Game</button>
+    </linea4>
+    <winnerzone id="ganador">
+    </winnerzone>
     <!-- cambio de imagen -->
     <script src="./js/imagenes.js"></script>
     <!-- sonidos -->
