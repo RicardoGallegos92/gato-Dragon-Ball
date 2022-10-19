@@ -1,0 +1,38 @@
+.titulo div{
+    font-size: 3rem;
+}
+
+footer a{
+    font-size: 2rem;
+}
+
+banner{
+    display: inline-flex;
+    height: 30rem;
+    background-image:
+    url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/d21af287556141.5dbb731b0e047.jpg');
+    background-position: center;
+    background-repeat: repeat-x;
+    background-size:cover;
+    font-size: 4rem;
+}
+
+#reset{
+    font-size: 1rem;
+}
+
+#player{
+    font-size: 2rem;
+}
+
+button{
+    font-size: 4rem;
+    max-width: 5.5rem;
+}
+
+#ganador{
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}

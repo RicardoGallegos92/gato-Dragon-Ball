@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Z Warriors</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" media="(max-width: 415px)" href="./stylephone.css">
+    <link rel="stylesheet" media="(max-width: 600px)" href="./styletablet.css">
+    <link rel="stylesheet" media="(min-width: 768px)" href="./stylePC.css">
     <link rel="stylesheet" href="./gato.css">
     <script scr="./js/title.js" ></script>
 </head>
 <body>
-    <h1 id="titulo">
+    <h1 class="titulo">
         <div>DRAGON BALL Z</div>
         <div>Select your K</div>
     </h1>
@@ -42,28 +45,28 @@
     
     <!-- aquí empezará el juego (quizá se vaya a otro ".html") -->
     <tiktaktoe id="gamezone">
-        <player1>
-            Player1 Space
+        <player1 id="player">
+            Player1
         </player1>
         <lineasdejuego>
             <linea1 id="linea">
-                <button type="button" id="button1"></button>
-                <button type="button" id="button2"></button>
-                <button type="button" id="button3"></button>
+                <button type="button" id="button1">&nbsp;</button>
+                <button type="button" id="button2">&nbsp;</button>
+                <button type="button" id="button3">&nbsp;</button>
             </linea1>
             <linea2 id="linea">
-                <button type="button" id="button4"></button>
-                <button type="button" id="button5"></button>
-                <button type="button" id="button6"></button>
+                <button type="button" id="button4">&nbsp;</button>
+                <button type="button" id="button5">&nbsp;</button>
+                <button type="button" id="button6">&nbsp;</button>
             </linea2>
             <linea3 id="linea">
-                <button type="button" id="button7"></button>
-                <button type="button" id="button8"></button>
-                <button type="button" id="button9"></button>
+                <button type="button" id="button7">&nbsp;</button>
+                <button type="button" id="button8">&nbsp;</button>
+                <button type="button" id="button9">&nbsp;</button>
             </linea3>
         </lineasdejuego>
-        <player2>
-            Player2 Space
+        <player2 id="player">
+            Player2
         </player2>
     </tiktaktoe>
     <linea4 id="linea">

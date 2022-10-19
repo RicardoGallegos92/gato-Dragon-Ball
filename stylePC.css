@@ -1,0 +1,42 @@
+.titulo div{
+    font-size: 7rem;
+}
+
+footer a{
+    font-size: 2rem;
+}
+
+banner{
+    display: inline-flex;
+    width: -webkit-fill-available;
+    height: 55rem;
+    background-image:
+    url('https://pbs.twimg.com/media/FYJFcpAXoAQ7qf0.jpg');
+    background-position: center;
+    background-repeat: repeat-x;
+    font-size: 8rem;
+}
+
+#reset{
+    font-size: 2rem;
+}
+
+#player{
+    font-size: 7rem;
+}
+
+lineasdejuego{
+    max-width: 300px;
+}
+
+button{
+    font-size: 9rem;
+    max-width: 100px;
+}
+
+#ganador{
+    font-size: 20rem;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}

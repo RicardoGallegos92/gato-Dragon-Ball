@@ -9,19 +9,9 @@ body{
     background-color: black;
 }
 
-footer{
-    width: 95%;
-    text-align: right;
-    background-color: yellow;
-    margin: 0 auto;
-}
-
-footer a{
-    font-size: 2rem;
-}
-
-#titulo{
-    width: 95%;
+.titulo{
+    width: 100%;
+    height: fit-content;
     margin: 0 auto;
     font-family: Saiyan;
     color: red;
@@ -31,24 +21,8 @@ footer a{
     border: 15px orange dotted;
 }
 
-#titulo div{
-    font-size: 6rem;
-}
-
-banner{
-    font-family: Saiyan-Sans;
-    display: inline-flex;
-    width: 99%;
-    background-image:
-    url('https://pbs.twimg.com/media/FYJFcpAXoAQ7qf0.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 550px;
-}
-
 figure{
-    font-size: 4rem;
-    width: 33.3%;
+    width: 33%;
     text-align: center;
 }
 
@@ -58,9 +32,60 @@ figure img{
     height: 90%;
 }
 
+footer{
+    width: 100%;
+    height: fit-content;
+    text-align: right;
+    background-color: yellow;
+    margin: 0 auto;
+}
+
+#linea{
+    display: flex;
+    justify-content: center;
+    background-color: green;
+    width: 100%;
+}
+
+#gamezone{
+    width: 100%;
+    height: fit-content;
+    display: inline-flex;
+    justify-content: center;
+    color: white;
+    background-color: rgb(211, 143, 17);
+}
+
+lineasdejuego{
+    width: 100%;
+}
+
 button{
-    height: 100px;
-    width: 100px;
+    height: 33%;
+    width: 33%;
+    background-color: whitesmoke;
+    cursor: pointer;
+    box-shadow: 1px 1px 0px 0px, 2px 2px;
+}
+
+#player{
+    width: 100%;
+    display: flex;
+    margin: auto 0;
+    justify-content: center;
+}
+
+player1{
+    background-color: blue;
+}
+
+player2{
+    background-color: orchid;
+}
+
+#reset{
+    display: flex;
+    justify-content: center;
 }
 
 @font-face {
