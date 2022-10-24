@@ -45,7 +45,9 @@ reset.onclick=function(){
     button7.innerHTML = "&nbsp";
     button8.innerHTML = "&nbsp";
     button9.innerHTML = "&nbsp";
-    gamezone.style.display="flex";
+    gato.style.display="none";
+    ///gamezone.classList.toggle('ocultar');
+    banner.style.display="inline-flex";
     winzone.innerText="";
 };
 
@@ -89,7 +91,7 @@ function ganar(player){
 
 // cambiamos la zona de juego completa por el texto de anuncio de ganador
 function yagano(){
-    gamezone.style.display="none";
+    gamezone.classList.toggle('ocultar');// a esto hay que hacerle toggle
     if(turno % 2 == 1 ){
         winzone.innerText="Player 1 ganó";
     }else{

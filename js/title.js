@@ -6,12 +6,11 @@ document.title = titulo;
 largo_titulo = titulo.length;
 document.title = titulo;
 var time_shooter = null; //por los lol-es
-retraso_ms = 200; //espacio de tiempo entre cambio de letras en milisegundos
+retraso_ms = 500; //espacio de tiempo entre cambio de letras en milisegundos
 
 function mover_titulo(){
 	if(iteracion < largo_titulo){
 		titulo_clon = letra.substring(0,iteracion+1) + titulo.substring(iteracion+1);
-		//console.log("Primer titulo: "+titulo_clon);
 		iteracion +=1;
 	}
 	else{

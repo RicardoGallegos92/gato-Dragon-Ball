@@ -21,6 +21,10 @@ body{
     border: 15px orange dotted;
 }
 
+.ocultar{
+    display: none !important;
+}
+
 figure{
     width: 33%;
     text-align: center;
@@ -30,6 +34,7 @@ figure img{
     object-fit:scale-down;
     width: 90%;
     height: 90%;
+    filter: drop-shadow(2px 4px 6px black);
 }
 
 footer{
