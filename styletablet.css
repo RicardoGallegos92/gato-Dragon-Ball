@@ -37,3 +37,7 @@ button{
 footer a{
     font-size: 2rem;
 }
+
+#gamezone{
+    display: block;
+}

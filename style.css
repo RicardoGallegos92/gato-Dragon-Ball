@@ -50,7 +50,6 @@ footer{
 #gamezone{
     width: 100%;
     height: fit-content;
-    display: inline-flex;
     justify-content: center;
     color: white;
     background-color: rgb(211, 143, 17);
@@ -70,7 +69,8 @@ button{
 
 #player{
     width: 100%;
-    display: flex;
+    display: block;
+    text-align: center;
     margin: auto 0;
     justify-content: center;
 }

@@ -1,3 +1,4 @@
+//variables para imagenes a seleccionar-----------------------------
 const goku=document.querySelector("[alt=Goku]");
 const imggoku1=document.createElement('img');
 const imggoku2=document.createElement('img');
@@ -21,13 +22,22 @@ imgveg2.setAttribute('src',
 imggoh1.src=goh.src;
 imggoh2.setAttribute('src',
 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2cb55797-9274-4f5f-a8d4-3aab8f3f9255/d33szss-43ab5cf9-aff9-4105-a72d-308f4fd7017f.png/v1/fill/w_400,h_613,strp/gohan_ssj_z_by_emiyansaiyan_d33szss-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjEzIiwicGF0aCI6IlwvZlwvMmNiNTU3OTctOTI3NC00ZjVmLWE4ZDQtM2FhYjhmM2Y5MjU1XC9kMzNzenNzLTQzYWI1Y2Y5LWFmZjktNDEwNS1hNzJkLTMwOGY0ZmQ3MDE3Zi5wbmciLCJ3aWR0aCI6Ijw9NDAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.X3nHbUoVySZCS3e7FtpC9Fzs4knobY0MdVphRUnFTdA')
+//------------------------------------------------------------------
 
 //imagen Goku
-goku.onmouseover=function(){goku.src=imggoku2.src};
-goku.onmouseleave=function(){goku.src=imggoku1.src};
+goku.onmouseover=function(){
+    goku.src=imggoku2.src;
+};
+goku.onmouseleave=function(){goku.src=imggoku1.src;};
 //imagen Vegeta
-veg.onmouseover=function(){veg.src=imgveg2.src};
-veg.onmouseleave=function(){veg.src=imgveg1.src};
+veg.onmouseover=function(){
+    veg.src=imgveg2.src;
+};
+veg.onmouseleave=function(){veg.src=imgveg1.src;};
 //imagen Gohan
-goh.onmouseover=function(){goh.src=imggoh2.src};
-goh.onmouseleave=function(){goh.src=imggoh1.src};
+goh.onmouseover=function(){
+    goh.src=imggoh2.src;
+};
+goh.onmouseleave=function(){goh.src=imggoh1.src;};
+//------------------------------------------------------------------
+

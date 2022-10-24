@@ -1,3 +1,4 @@
+//variables para el gato
 const button1 = document.getElementById("button1");
 const button2 = document.getElementById("button2");
 const button3 = document.getElementById("button3");
@@ -10,7 +11,7 @@ const button9 = document.getElementById("button9");
 const reset   = document.getElementById("reset");
 const gamezone= document.getElementById("gamezone");
 const winzone = document.getElementById("ganador");
-
+//---------------------------------
 var x='X';
 var o='O';
 var turno = 1;

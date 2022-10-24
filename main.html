@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" media="(max-width: 419px)" href="./stylephone.css">
     <link rel="stylesheet" media="(min-width: 420px)" href="./styletablet.css">
@@ -38,40 +37,42 @@
             <figcaption>Gohan</figcaption>
         </figure>
     </banner>
-
     <audio id="selectsound">
         <source src="./audio/select.mp3" type="audio/mpeg">
     </audio>
-    
     <!-- aquí empezará el juego (quizá se vaya a otro ".html") -->
-    <tiktaktoe id="gamezone">
-        <player1 id="player">
-            Player1
-        </player1>
-        <lineasdejuego>
-            <linea1 id="linea">
-                <button type="button" id="button1">&nbsp;</button>
-                <button type="button" id="button2">&nbsp;</button>
-                <button type="button" id="button3">&nbsp;</button>
-            </linea1>
-            <linea2 id="linea">
-                <button type="button" id="button4">&nbsp;</button>
-                <button type="button" id="button5">&nbsp;</button>
-                <button type="button" id="button6">&nbsp;</button>
-            </linea2>
-            <linea3 id="linea">
-                <button type="button" id="button7">&nbsp;</button>
-                <button type="button" id="button8">&nbsp;</button>
-                <button type="button" id="button9">&nbsp;</button>
-            </linea3>
-        </lineasdejuego>
-        <player2 id="player">
-            Player2
-        </player2>
-    </tiktaktoe>
-    <linea4 id="linea">
-        <button type="button" id="reset">Reset Game</button>
-    </linea4>
+    <gato style="display:none;">
+        <tiktaktoe id="gamezone">
+            <player1 id="player">
+                <!-- aquí se insertará la imagen del player1 -->
+                Player1
+            </player1>
+            <lineasdejuego>
+                <linea1 id="linea">
+                    <button type="button" id="button1">&nbsp;</button>
+                    <button type="button" id="button2">&nbsp;</button>
+                    <button type="button" id="button3">&nbsp;</button>
+                </linea1>
+                <linea2 id="linea">
+                    <button type="button" id="button4">&nbsp;</button>
+                    <button type="button" id="button5">&nbsp;</button>
+                    <button type="button" id="button6">&nbsp;</button>
+                </linea2>
+                <linea3 id="linea">
+                    <button type="button" id="button7">&nbsp;</button>
+                    <button type="button" id="button8">&nbsp;</button>
+                    <button type="button" id="button9">&nbsp;</button>
+                </linea3>
+            </lineasdejuego>
+            <player2 id="player">
+                <!-- aquí se insertará la imagen del player2 -->
+                Player2
+            </player2>
+        </tiktaktoe>
+        <linea4 id="linea">
+            <button type="button" id="reset">Reset Game</button>
+        </linea4>
+    </gato>
     <winnerzone id="ganador">
     </winnerzone>
     <!-- cambio de imagen -->
@@ -80,7 +81,6 @@
     <script src="./js/sonidos.js"></script>
     <!-- gato -->
     <script src="./js/gato.js"></script>
-
 </body>
 <footer>
     <a href="https://www.twitch.tv/sanson_kronos" target="blanck">

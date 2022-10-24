@@ -35,8 +35,13 @@ button{
 }
 
 #ganador{
-    font-size: 20rem;
+    font-size: 15rem;
     display: flex;
     justify-content: center;
+    color: black;
     background-color: white;
+}
+
+#gamezone{
+    display: inline-flex;
 }

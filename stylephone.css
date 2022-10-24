@@ -36,3 +36,7 @@ button{
     justify-content: center;
     background-color: white;
 }
+
+#gamezone{
+    display: inline-flex;
+}
