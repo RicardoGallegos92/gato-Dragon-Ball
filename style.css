@@ -38,7 +38,7 @@ figure img{
 }
 
 footer{
-    width: 100%;
+    width: 90%;
     height: fit-content;
     text-align: right;
     background-color: yellow;
@@ -48,6 +48,7 @@ footer{
 #linea{
     display: flex;
     justify-content: center;
+    vertical-align: center;
     background-color: green;
     width: 100%;
 }
