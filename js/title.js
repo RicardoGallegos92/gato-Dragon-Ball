@@ -20,4 +20,4 @@ function mover_titulo(){
 	time_shooter = setTimeout("mover_titulo()", retraso_ms);  //llamada recursiva con retraso
 };
 
-mover_titulo();
+window.addEventListener('load', mover_titulo)
