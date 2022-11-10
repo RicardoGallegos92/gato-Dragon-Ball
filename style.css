@@ -55,6 +55,7 @@ h1 > div{
         red
     );
     background-size: 200%;
+    background-clip: initial;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     white-space: nowrap;
