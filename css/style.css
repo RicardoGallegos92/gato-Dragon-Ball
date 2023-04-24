@@ -4,9 +4,18 @@
     padding: 0;
     font-size: 10px;
 }
+
 body{
-    background-position: center;
+    background-position-y: -40%;
+    background-position-x: center;
+    
     background-size: cover;
+    background-repeat: no-repeat;
+    
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    width: 100vw;
+    height: 100vh;
 }
 
 /* para que el color de gradiente texto haga un ciclo */
@@ -19,7 +28,7 @@ body{
     }
 }
 
-.fondoTitulo{
+.titulo{
     /* animación del color de texto tiempo 's' (segundos) */
     animation: background-pan 2s linear infinite;
     /* colores para la gradiente de texto */
@@ -44,4 +53,15 @@ body{
         format('truetype');
     font-style: normal;
     font-weight: normal;
+}
+
+footer{
+    background-color:rgb(91, 78, 78);
+    height: 4vh;
+}
+
+img{
+    height:-webkit-fill-available;
+    min-height: 1rem;
+    width: auto;
 }

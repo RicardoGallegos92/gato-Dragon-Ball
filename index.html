@@ -22,21 +22,58 @@
     <script src="./js/gato.js"></script>
 <!-- Estilos propios -->
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" media="(max-width: 419px)" href="./css/stylephone.css">
-    <link rel="stylesheet" media="(min-width: 420px)" href="./css/styletablet.css">
-    <link rel="stylesheet" media="(min-width: 769px)" href="./css/stylePC.css">
+    <link media="(max-width: 419px)"
+        rel="stylesheet" href="./css/stylephone.css">
+
+    <link media="(min-width: 420px) and (max-width: 768px)"
+        rel="stylesheet" href="./css/styletablet.css">
+
+    <link media="(min-width: 769px)"
+        rel="stylesheet" href="./css/stylePC.css">
 </head>
 <body>
-    <h1 class="titulo">
-        <div>DRAGON BALL Z<br>Select your K</div>
+    <h1 class="titulo text-center">
+        <div>DRAGON BALL Z<br>Elige tu guerrero</div>
     </h1>
+    <section  class="personajes card-group d-flex">
+        <div class="card col">
+            <img src=""
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <div class="card-footer text-center">
+                    <h5>GOKU</h5>
+                </div>
+            </div>
+        </div>
+        <div class="card col">
+            <img src="..."
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <div class="card-footer text-center">
+                    <h5>VEGETA</h5>
+                </div>
+            </div>
+        </div>
+        <div class="card col">
+            <img src="..."
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <div class="card-footer text-center">
+                    <h5>GOHAN</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="tiktaktoe">
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+    <footer class="text-end bg-gradient fixed-bottom mx-5">
+        <a href="https://github.com/RicardoGallegos92" target="blanck">
+            <img src="./images/github-logo.png"></a>
+        <a href="https://www.twitch.tv/sanson_kronos" target="blanck">
+            <img src="./images/twitch-logo.png"></a>
+    </footer>
 </body>
-<footer class="text-end bg-dark bg-gradient fixed-bottom mx-5">
-    <a href="https://github.com/RicardoGallegos92" target="blanck">
-        <img src="./images/github-logo.png" height="50px">
-    </a>
-    <a href="https://www.twitch.tv/sanson_kronos" target="blanck">
-        <img src="./images/twitch-logo.png" height="50px">
-    </a>
-</footer>
 </html>
