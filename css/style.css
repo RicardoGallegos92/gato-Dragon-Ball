@@ -21,15 +21,13 @@
     font-weight: normal;
 }
 
-h1{
-    font-size: 5rem;
-}
-
 body{
     background-position-y: 40%;
     background-position-x: center;
     background-repeat: no-repeat;
     background-size: contain;
+    
+    font-family: Saiyan;
 }
 
 main{
@@ -39,9 +37,12 @@ main{
     height: 100vh;
 }
 
+h1{
+    font-size: 5rem;
+}
+
 .titulo{
-    text-align: ;
-    font-family: Saiyan;
+    text-align: center;
     /* animación del color de texto tiempo 's' (segundos) */
     animation: background-pan 2s linear infinite;
     /* colores para la gradiente de texto */
@@ -60,16 +61,47 @@ main{
     -webkit-text-stroke: thin;
 }
 
-.card{
-    background-color: transparent;
-    border-color: darkblue;
+#personajes{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content:space-evenly;
 }
 
-.card img{
-    background-color: green;
-    max-height: 80vh;
+#personajes figure{
     max-width: 100%;
-    height: auto;   
+    max-height: 70vh;
+}
+
+figure img{
+    width: 90%;
+    max-height: inherit;
+    filter: grayscale(100%) opacity(40%);
+}
+
+figure figcaption{
+    text-align: center;
+    font-size: 1rem;
+}
+
+figure img:hover{
+    /* filter: drop-shadow(16px 16px 20px yellow); */
+    filter: drop-shadow(10px 10px black);
+    margin: 5px;
+    border: 2px double black;
+    background-color: rgba(255, 255, 255, 0.3);
+    
+    background-image:
+        url("../images/destelloAzul.png");
+    background-position-y: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+footer{
+    background-color:rgba(91, 78, 78, 0.18);
+    height: 4vh;
 }
 
 a img{
@@ -77,7 +109,15 @@ a img{
     min-height: 1rem; 
 }
 
-footer{
-    background-color:rgba(91, 78, 78, 0.18);
-    height: 4vh;
+{
+/* filter: grayscale(100%); */
+/* filter: blur(5px); */
+/* filter: brightness(0.4); */
+/* filter: contrast(200%); */
+/* filter: drop-shadow(16px 16px 20px blue); */
+/* filter: hue-rotate(90deg); */
+/* filter: invert(75%); */
+/* filter: opacity(50%); */
+/* filter: saturate(30%); */
+/* filter: sepia(60%); */
 }
