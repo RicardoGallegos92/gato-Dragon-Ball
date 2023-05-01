@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     font-size: 10px;
+    min-width: 365px;
 }
 /* para que el color de gradiente texto haga un ciclo */
 @keyframes background-pan{
@@ -26,25 +27,32 @@ body{
     background-position-x: center;
     background-repeat: no-repeat;
     background-size: contain;
-    
     font-family: Saiyan;
+    margin-bottom: 10vh;
+}
+
+header{
+    background-image: url(
+        "../images/2_5D.gif"
+    );
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
 }
 
 main{
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
-    width: 100vw;
-    height: 100vh;
 }
 
 h1{
     font-size: 5rem;
+    text-align: center;
 }
 
 .titulo{
-    text-align: center;
     /* animación del color de texto tiempo 's' (segundos) */
-    animation: background-pan 2s linear infinite;
+    animation: background-pan 1000ms linear infinite;
     /* colores para la gradiente de texto */
     background: linear-gradient(
         to right,
@@ -57,11 +65,25 @@ h1{
     background-size: 200%;
     background-clip: initial;
     -webkit-background-clip: text;
+    /* Color de Letra */
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: thin;
+    /* Color del Borde de letra */
+    -webkit-text-stroke-color:rgb(0, 0, 0);
+    -webkit-text-stroke-width: 0.75px;
+
+    filter: drop-shadow(0px 10px 15px rgb(255, 255, 255));
+
+    text-shadow:                   
+             1px -1px 50px rgba(255, 255, 255, 0.5),
+            -1px  1px 50px rgba(255, 255, 255, 0.5),
+            -1px -1px 50px rgba(255, 255, 255, 0.5);
+
+
 }
 
 #personajes{
+    display: none;
+
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
@@ -81,14 +103,12 @@ figure img{
 
 figure figcaption{
     text-align: center;
-    font-size: 1rem;
 }
 
 figure img:hover{
-    /* filter: drop-shadow(16px 16px 20px yellow); */
-    filter: drop-shadow(10px 10px black);
-    margin: 5px;
-    border: 2px double black;
+    /* filter: drop-shadow(10px 10px 0px rgb(121, 115, 115)); */
+    filter: drop-shadow(10px 10px 2.5px black);
+    border: 3px double black;
     background-color: rgba(255, 255, 255, 0.3);
     
     background-image:
@@ -98,26 +118,171 @@ figure img:hover{
     background-repeat: no-repeat;
     background-size: contain;
 }
+/* Cheat Codes de Efectos */
+{
+    /* filter: grayscale(100%); */
+    /* filter: blur(5px); */
+    /* filter: brightness(0.4); */
+    /* filter: contrast(200%); */
+    /* filter: drop-shadow(16px 16px 20px blue); */
+    /* filter: hue-rotate(90deg); */
+    /* filter: invert(75%); */
+    /* filter: opacity(50%); */
+    /* filter: saturate(30%); */
+    /* filter: sepia(60%); */
+    /* transform: scaleX(-1); */
+}
+
+.tiktaktoe{
+    margin: 0 2%;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(5, 100px);
+    border: 2px dotted black;
+    min-width: 365px;
+}
+
+.casilla{
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
+    font-size: 8rem;
+
+    color: transparent;
+}
+
+/*
+  1 2 3 4 5
+A _|_|_|_|_
+B _|_|_|_|_
+C _|_|_|_|_
+D _|_|_|_|_
+E  | | | | 
+*/
+/* Clase para agrandar al ganador */
+.winner{
+    grid-row: 1 / span 5 !important;
+    grid-column: 1 / span 5 !important;
+/*    grid-row: 1 !important;
+    grid-column:3 !important;
+*/
+}
+/* Clase para ocultar cosas */
+.oculto{
+    display: none !important;
+}
+
+.B2{
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.B3{
+    grid-row: 2;
+    grid-column: 3;
+}
+
+.B4{
+    grid-row: 2;
+    grid-column: 4;
+}
+
+.C2{
+    grid-row: 3;
+    grid-column: 2;
+}
+
+.C3{
+    grid-row: 3;
+    grid-column: 3;
+}
+
+.C4{
+    grid-row: 3;
+    grid-column: 4;
+}
+
+.D2{
+    grid-row: 4;
+    grid-column: 2;
+}
+
+.D3{
+    grid-row: 4;
+    grid-column: 3;
+}
+
+.D4{
+    grid-row: 4;
+    grid-column: 4;
+}
+
+#player1{
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 2;
+    display: flex;
+    justify-content: center;
+}
+
+#player1 img{
+    width: auto;
+    height: 100%;
+    filter: drop-shadow(-3px -2px lightblue);
+}
+
+#player2{
+    grid-row: 5;
+    grid-column: 4 / span 2;
+    display: flex;
+    justify-content: center;
+}
+
+#player2 img{
+    width: auto;
+    height: 100%;
+    filter: drop-shadow(4px 2px lightblue);
+}
+
+#resetZone{
+    margin: 0 auto;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+#btnReset{
+    width: 20rem;
+    height: 6rem;
+    font-size: 4rem;
+}
 
 footer{
-    background-color:rgba(91, 78, 78, 0.18);
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0 5%;
+    
+    min-height: 1rem;
     height: 4vh;
+
+    background-color:rgba(91, 78, 78, 0.18);
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: end;
+}
+
+.disclaimer{
+    font-size: 0rem;
+    left: 0;
 }
 
 a img{
-    height:-webkit-fill-available;
-    min-height: 1rem; 
-}
-
-{
-/* filter: grayscale(100%); */
-/* filter: blur(5px); */
-/* filter: brightness(0.4); */
-/* filter: contrast(200%); */
-/* filter: drop-shadow(16px 16px 20px blue); */
-/* filter: hue-rotate(90deg); */
-/* filter: invert(75%); */
-/* filter: opacity(50%); */
-/* filter: saturate(30%); */
-/* filter: sepia(60%); */
+    height:100%;
+    width: auto;
 }

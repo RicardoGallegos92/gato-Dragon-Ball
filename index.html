@@ -15,9 +15,9 @@
 <!-- movimiento del titulo de pestaña -->
     <script src="./js/title.js"></script>
 <!-- cambio de imagen -->
-    <script src="./js/imagenes.js"></script>
+    <!-- <script src="./js/imagenes.js"></script> -->
 <!-- sonidos -->
-    <script src="./js/sonidos.js"></script>
+    <!-- <script src="./js/sonidos.js"></script> -->
 <!-- gato -->
     <script src="./js/gato.js"></script>
 <!-- Estilos propios -->
@@ -32,41 +32,67 @@
         rel="stylesheet" href="./css/stylePC.css">
 </head>
 <body>
-<main>
-    <h1 class="titulo">
-        DRAGON BALL Z<br>Elige a tu campeon
-    </h1>
-    <section id="personajes">
+    <header>
+        <h1 class="titulo">
+            DRAGON BALL Z<br>Elige a tu campeon
+        </h1>
+    </header>
+    <main>
+        <section id="personajes">
 
-        <figure>
-            <img
-            src="https://i.pinimg.com/originals/97/35/2a/97352a18b151610dc66f3f693e0b9196.png"
-            alt="Goku">
-            <figcaption>Goku</figcaption>
-        </figure>
+            <figure class="personaje">
+                <img
+                src="https://i.pinimg.com/originals/97/35/2a/97352a18b151610dc66f3f693e0b9196.png"
+                alt="Goku">
+                <figcaption><h2>Goku</h2></figcaption>
+            </figure>
 
-        <figure>
-            <img
-            src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/abbe87ea-79ce-45cd-99ba-3a975914627a/dbs82kg-848a36c2-9024-44fc-9b9d-715f2380cb53.png/v1/fill/w_1024,h_2579,strp/vegeta__universe_survival__3_facudibuja_by_facudibuja_dbs82kg-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjU3OSIsInBhdGgiOiJcL2ZcL2FiYmU4N2VhLTc5Y2UtNDVjZC05OWJhLTNhOTc1OTE0NjI3YVwvZGJzODJrZy04NDhhMzZjMi05MDI0LTQ0ZmMtOWI5ZC03MTVmMjM4MGNiNTMucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.kRRX-SU6N7ExVMrvSSCHVtq3p9xj5IrIwzOLNGrp07g"
-            alt="Vegeta">
-            <figcaption>Vegeta</figcaption>
-        </figure>
+            <figure class="personaje">
+                <img
+                src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/abbe87ea-79ce-45cd-99ba-3a975914627a/dbs82kg-848a36c2-9024-44fc-9b9d-715f2380cb53.png/v1/fill/w_1024,h_2579,strp/vegeta__universe_survival__3_facudibuja_by_facudibuja_dbs82kg-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjU3OSIsInBhdGgiOiJcL2ZcL2FiYmU4N2VhLTc5Y2UtNDVjZC05OWJhLTNhOTc1OTE0NjI3YVwvZGJzODJrZy04NDhhMzZjMi05MDI0LTQ0ZmMtOWI5ZC03MTVmMjM4MGNiNTMucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.kRRX-SU6N7ExVMrvSSCHVtq3p9xj5IrIwzOLNGrp07g"
+                alt="Vegeta">
+                <figcaption><h2>Vegeta</h2></figcaption>
+            </figure>
+            
+            <figure class="personaje">
+                <img
+                src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3817246c-a947-491c-ae2e-f214715c93cb/dbmu9y4-5eb5fce4-b8d6-4b8f-be20-e17aae887607.png/v1/fill/w_1280,h_2319,strp/gohan__3_by_urielalv_dbmu9y4-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjMxOSIsInBhdGgiOiJcL2ZcLzM4MTcyNDZjLWE5NDctNDkxYy1hZTJlLWYyMTQ3MTVjOTNjYlwvZGJtdTl5NC01ZWI1ZmNlNC1iOGQ2LTRiOGYtYmUyMC1lMTdhYWU4ODc2MDcucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.6BVlXWrOKf3Bt36BlV9E2r2EgDaEQcDyZ0kxWyWFhHY"
+                alt="Gohan">
+                <figcaption><h2>Gohan</h2></figcaption>
+            </figure>
         
-        <figure>
-            <img
-            src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3817246c-a947-491c-ae2e-f214715c93cb/dbmu9y4-5eb5fce4-b8d6-4b8f-be20-e17aae887607.png/v1/fill/w_1280,h_2319,strp/gohan__3_by_urielalv_dbmu9y4-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjMxOSIsInBhdGgiOiJcL2ZcLzM4MTcyNDZjLWE5NDctNDkxYy1hZTJlLWYyMTQ3MTVjOTNjYlwvZGJtdTl5NC01ZWI1ZmNlNC1iOGQ2LTRiOGYtYmUyMC1lMTdhYWU4ODc2MDcucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.6BVlXWrOKf3Bt36BlV9E2r2EgDaEQcDyZ0kxWyWFhHY"
-            alt="Gohan">
-            <figcaption>Gohan</figcaption>
-        </figure>
-    
-    </section>
-    <section class="tiktaktoe">
-        <div></div>
-        <div></div>
-        <div></div>
-    </section>
-</main>
-    <footer class="text-end fixed-bottom mx-5">
+        </section>
+        <section id="zonaJuego" class="oculto">
+
+            <section class="tiktaktoe">
+                <button class="casilla B2" type="button">1</button>
+                <button class="casilla B3" type="button">2</button>
+                <button class="casilla B4" type="button">3</button>
+                <button class="casilla C2" type="button">4</button>
+                <button class="casilla C3" type="button">5</button>
+                <button class="casilla C4" type="button">6</button>
+                <button class="casilla D2" type="button">7</button>
+                <button class="casilla D3" type="button">8</button>
+                <button class="casilla D4" type="button">9</button>
+                <div id="player1">
+                    <img src="./images/player-gohan.png"
+                        alt="Player_1">
+                </div>
+                <div id="player2">
+                    <img src="./images/player-vegeta.png"
+                        alt="Player_2">
+                </div>
+            </section>
+
+            <section id="resetZone">
+            <button type="button" id="btnReset">PERSONAJES</button>
+            </section>
+
+        </section>
+    </main>
+
+    <footer>
+        <p class="disclaimer">Dragon Ball Z Is Owned By Funimation, Toei Animation</p>
         <a href="https://github.com/RicardoGallegos92" target="blanck">
             <img src="./images/github-logo.png"></a>
 
