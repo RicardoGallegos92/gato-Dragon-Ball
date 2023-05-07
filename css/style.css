@@ -23,12 +23,17 @@
 }
 
 body{
-    background-position-y: 40%;
+    background-position-y: center;
     background-position-x: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     font-family: Saiyan;
-    margin-bottom: 10vh;
+    padding-bottom: 10vh;
+    height: 100vh;
+    width: 100vw;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+
 }
 
 header{
@@ -40,14 +45,13 @@ header{
     background-size: cover;
 }
 
-main{
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-}
-
 h1{
     font-size: 5rem;
     text-align: center;
+}
+
+h2{
+    font-size: "1.875rem";
 }
 
 .titulo{
@@ -82,8 +86,6 @@ h1{
 }
 
 #personajes{
-    display: none;
-
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
@@ -95,17 +97,22 @@ h1{
     max-height: 70vh;
 }
 
-figure img{
+figure figcaption h2{
+    font-size: 0px;
+}
+
+.personaje{
     width: 90%;
     max-height: inherit;
     filter: grayscale(100%) opacity(40%);
+    align-self: center;
 }
 
 figure figcaption{
-    text-align: center;
+    text-align: left;
 }
 
-figure img:hover{
+.personaje:hover{
     /* filter: drop-shadow(10px 10px 0px rgb(121, 115, 115)); */
     filter: drop-shadow(10px 10px 2.5px black);
     border: 3px double black;
@@ -134,7 +141,7 @@ figure img:hover{
 }
 
 .tiktaktoe{
-    margin: 0 2%;
+    margin: 0 5%;
     display: grid;
     grid-template-columns: repeat(5, 20%);
     grid-template-rows: repeat(5, 100px);

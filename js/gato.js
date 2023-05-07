@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    let positionName, positionPersonaje;
     let turno = 1;
     let p1=[];
     let p2=[];
@@ -7,13 +8,15 @@ $(document).ready(function(){
                     [1,5,9],[3,5,7]];
 
     function yagano(){
-        let ganador;
+        let ganador, perdedor;
         if(turno % 2 == 1 ){
 //            console.log("Player 1 ganó");
             ganador = $("#player1");
+            perdedor = $("#player2");
         }else{
 //            console.log("Player 2 ganó");
             ganador = $("#player2");
+            perdedor = $("#player1");
         }
         $(ganador).toggleClass("winner");
         for (let i = 0; i < 3; i++){
@@ -36,7 +39,13 @@ $(document).ready(function(){
     };
 // Hacer que juegue de vuelta
     function comPlayer(){
-
+        // primera jugada al azar
+        // luego se usa la discriminación de ganar()
+        //* para elegir una de las posibles jugadas
+        // evaluar si la casilla está disponible
+        // *-repetir proceso
+        // en paralelo revisar las posibilidades
+        //* de ganar que tiene el jugador y priorizar bloquearlo
     }
 
     function cambio(){
@@ -49,6 +58,29 @@ $(document).ready(function(){
             // animación de selección
             // enviar imagen correspondiente a la selección
             cambio();
+        },
+        mouseenter: function(){
+            positionPersonaje = $(this).position();
+            positionName = $(this).next().position();
+
+            $(this).next().children().css({"color" : "yellow",
+                            "position" : "absolute",
+                            "-webkit-text-stroke-color" : "rgb(0, 0, 0)",
+                            "-webkit-text-stroke-width" : "1.75px"});
+            
+            $(this).next().children().animate({top : positionPersonaje.top-50,
+                                                left : positionPersonaje.left,
+                                                fontSize: "5rem",}, 500, "swing");
+        },
+        mouseleave: function(){
+            $(this).next().children().animate({top : positionName.top,
+                                                left : positionName.left,
+                                                fontSize: "0rem"}, 500, "swing",
+                                            function(){
+                                                $(this).removeAttr('style');
+                                            }
+            );
+            //detener toda animación !!!!!!!!
         }
     });
 // aquí marcamos las jugadas
@@ -75,8 +107,8 @@ $(document).ready(function(){
             turno += 1;
         }
         $("#btnReset").text("Reset Game");
-        console.log("p1: "+p1);
-        console.log("p2: "+p2);
+//        console.log("p1: "+p1);
+//        console.log("p2: "+p2);
     });
 // Clickear Reset
     $("#btnReset").click(function(){
@@ -104,12 +136,16 @@ $(document).ready(function(){
 // Animacion Footer
     $("footer").on({
         mouseenter: function(){
-            $(this).animate({height: '10vh'}, 2000);
-            $(".disclaimer").animate({fontSize:'3rem'}, 2000);
-        },
-          click: function(){
-            $(this).animate({height: '4vh'}, 800);
-            $(".disclaimer").animate({fontSize:'0rem'}, 1000);
+            $(this).animate({height: '10vh'}, 1000);
+            $(".disclaimer").animate({fontSize:'3rem'}, 1000,
+                function(){
+                    setTimeout(function(){
+                        $("footer").animate({height: '4vh'}, 800);
+                        $(".disclaimer").animate({fontSize:'0rem'}, 1000);
+                    }
+                    ,3000);
+                }
+            );
         }
     });
 });
