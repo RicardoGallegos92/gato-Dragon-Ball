@@ -1,13 +1,23 @@
 $(document).ready(function(){
     let positionName, positionPersonaje;
     let personajeCom;
+    const FOTO_AVATAR_PERSONAJE = {
+        'Goku': './images/player-goku.png',
+        'Vegeta': './images/player-vegeta.png',
+        'Gohan': './images/player-gohan.png'
+    };
+    const FOTO_AVATAR_PERSONAJE_ARRAY = Object.values(FOTO_AVATAR_PERSONAJE);
+//  --------------------------------------------
+    console.table(FOTO_AVATAR_PERSONAJE);
+    console.table(FOTO_AVATAR_PERSONAJE_ARRAY);
+//  --------------------------------------------
 
     function cambio(){
         $("#personajes").addClass("oculto");
         $("#zonaJuego").removeClass("oculto");
     }
     
-    function seleccionado(){
+    function animarSeleccion(){
         $(".personaje").animate({height: '0', width: '0'},1000,
             function(){
                 cambio();
@@ -17,12 +27,20 @@ $(document).ready(function(){
         $(".personaje").next().fadeOut();
     }
 
-    function selectPersonajeCom(personajePlayer){
-        do{
-            personajeCom = Math.round((Math.random()*2)+1);
-            console.log(personajeCom);
-        }while(personajePlayer == personajeCom);
-        return personajeCom;
+    function asignarAvatarElegido(casillaJugador, selectedPersonaje){
+        casillaJugador.attr("src",
+            FOTO_AVATAR_PERSONAJE[selectedPersonaje.attr("alt")]);
+    }
+    
+    function asignarAvatarRandom(casillaJugador) {
+        personajeCOM = Math.round(Math.random()*2);
+        casillaJugador.attr("src", FOTO_AVATAR_PERSONAJE_ARRAY[personajeCOM]);
+    }
+
+    function asignarAvatares(selectedPersonaje){
+        asignarAvatarElegido($("#player1 img"), selectedPersonaje);
+        asignarAvatarRandom($("#player2 img"));
+        
     }
 
 // Se selecciona al personaje y pasamos al juego
@@ -30,72 +48,57 @@ $(document).ready(function(){
         click: function(){
             let personajePlayer;
             // enviar imagen correspondiente a la selección
-            switch($(this).attr("alt")){
-                case "Goku":
-                    $("#player1 img").attr("src", "./images/player-goku.png");
-                    personajePlayer = 1;
-                    break;
-                case "Vegeta":
-                    $("#player1 img").attr("src", "./images/player-vegeta.png");
-                    personajePlayer = 2;
-                    break;
-                case "Gohan":
-                    $("#player1 img").attr("src", "./images/player-gohan.png");
-                    personajePlayer = 3;
-                    break;
-            }
-            switch (selectPersonajeCom(personajePlayer)){
-                case 1:
-                    $("#player2 img").attr("src", "./images/player-goku.png");
-                    break;
-                case 2:
-                    $("#player2 img").attr("src", "./images/player-vegeta.png");
-                    break;
-                case 3:
-                    $("#player2 img").attr("src", "./images/player-gohan.png");
-                    break;
-            }
             // animación de selección
-            seleccionado();
+            animarSeleccion();
+            asignarAvatares($(this));
         },
         mouseenter: function(){
             positionPersonaje = $(this).position();
             positionName = $(this).next().position();
 
-            $(this).next().children()
-                .css({"position" : "absolute"});
-
-            $(this).animate({height: '100%'}, 500, "swing",
-                    function(){
-                        $(this).stop(true,false); // Detener animaciones que pudiesen encolarse
-                    }
+            //  Agrandar imagen
+            $(this).animate({
+                height: '100%'
+            }, 500,
+            function(){
+                // Detener animaciones que pudiesen encolarse
+                $(this).stop(true,false);
+            }
             );
+        //  Mover texto con nombre
+            $(this).next().children().css({"position" : "absolute"});
 
-            $(this).next().children()
-                .animate({top : positionPersonaje.top-30,
-                        left : positionPersonaje.left,
-                        fontSize: "5rem",}, 500,
+            $(this).next().children().animate({
+                    top : positionPersonaje.top-30,
+                    left : positionPersonaje.left,
+                    fontSize: "5rem",}, 500,
                 function(){
-                    $(this).stop(true,false); // Detener animaciones que pudiesen encolarse
+                    // Detener animaciones que pudiesen encolarse
+                    $(this).stop(true,false);
                 }
             );
         },
         mouseleave: function(){
-            
-            $(this).animate({height: '90%'},500,
-                    function(){
-                        $(this).removeAttr('style');
-                    }
+        //  Volver al tamaño original
+            $(this).animate({
+                    height: '90%'
+                },500,
+                function(){
+                    $(this).removeAttr('style');
+                }
             );
-            
-            $(this).next().children()
-                .animate({top : positionName.top,
-                        left : positionName.left,
-                        fontSize: "0rem"}, 500,
-                    function(){
-                        $(this).stop(true,true); // Detener animaciones que pudiesen encolarse
-                        $(this).removeAttr('style'); // Remueve atributos para resetear encasillado
-                    }
+        //  Regresar texto a Bolivia
+            $(this).next().children().animate({
+                    top : positionName.top,
+                    left : positionName.left,
+                    fontSize: "0rem"
+                }, 500,
+                function(){
+                    // Detener animaciones que pudiesen encolarse
+                    $(this).stop(true,true);
+                    // Remueve atributos para resetear encasillado
+                    $(this).removeAttr('style');
+                }
             );
         }
     });

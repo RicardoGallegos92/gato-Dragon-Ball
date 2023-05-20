@@ -57,7 +57,7 @@ h2{
     -webkit-text-stroke-width : 1.75px;
 }
 
-.titulo{
+.tituloHeader{
     /* animación del color de texto tiempo 's' (segundos) */
     animation: background-pan 1000ms linear infinite;
     /* colores para la gradiente de texto */
@@ -113,10 +113,6 @@ h2{
     width: auto;
     max-height: 100%;
     filter: grayscale(100%) opacity(40%);
-}
-
-figure figcaption{
-    text-align: left;
 }
 
 .personaje:hover{

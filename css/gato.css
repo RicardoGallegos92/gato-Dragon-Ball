@@ -10,9 +10,10 @@
 }
 
 .tiktaktoe{
-    min-width: 365px;
+    min-height: 500px;
+    min-width: 500px;
     width: 100%;
-    height: auto;
+    height: 100%;
     max-height: 70vh;
     max-width: 70vh;
     border: 2px dotted black;
@@ -24,8 +25,14 @@
 .casilla{
     min-height: 100px;
     min-width: 100px;
+/*
     height: -webkit-fill-available;
     width: -webkit-fill-available;
+*/
+
+    height: 100%;
+    width: 100%;
+
     border: 2px solid black;
     display: flex;
     justify-content: center;
@@ -46,6 +53,7 @@ E  | | | |
 .winner{
     grid-row: 1 / span 5 !important;
     grid-column: 1 / span 5 !important;
+    height: 100%;
 }
 /* Clase para ocultar cosas */
 .oculto{
@@ -102,11 +110,12 @@ E  | | | |
     grid-column: 1 / span 2;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 #player1 img{
-    width: auto;
     height: 100%;
+    width: auto;
     filter: drop-shadow(-3px -2px lightblue);
 }
 
@@ -115,11 +124,12 @@ E  | | | |
     grid-column: 4 / span 2;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 #player2 img{
-    width: auto;
     height: 100%;
+    width: auto;
     transform: scaleX(-1);
     filter: drop-shadow(-4px 4px lightblue);
 }
@@ -133,7 +143,7 @@ E  | | | |
 }
 
 #btnReset{
-    width: 20rem;
     height: 6rem;
+    width: 20rem;
     font-size: 4rem;
 }

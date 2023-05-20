@@ -1,14 +1,15 @@
 $(document).ready(function(){
+    const TEXTO_ORIGINAL_BOTON = "PERSONAJES";
     let turno = 1;
-    let p1=[],
-        p2=[];
+    let jugadasPlayer1=[],
+        jugadasPlayer2=[];
     let ganador = null,
         perdedor = null;
-    const winners = [[1,2,3],[4,5,6],[7,8,9],
+    const COMBINACION_GANADORA = [[1,2,3],[4,5,6],[7,8,9],
                     [1,4,7],[2,5,8],[3,6,9],
                     [1,5,9],[3,5,7]];
 
-    function yagano(){
+    function siGano(){
         if(turno % 2 == 1 ){
 //            console.log("Player 1 ganó");
             ganador = $("#player1");
@@ -21,18 +22,22 @@ $(document).ready(function(){
         $(ganador).addClass("winner");
         $(perdedor).addClass("oculto");
         for (let i = 0; i < 3; i++){
-            $(ganador).animate({height: '100px'}, 300);
-            $(ganador).animate({height: '500px'}, 300);
+            $(ganador).children().animate({height: '20%'}, 300);
+            $(ganador).children().animate({height: '100%'}, 300);
         }
     };
 
-    function ganar(player){
-        player.sort();
+
+
+    function ganar(listaJugadas){
+        listaJugadas.sort();
         for(let i=0; i<8; i+=1){
-            if(player.includes(winners[i][0])){
-                if(player.includes(winners[i][1])){
-                    if(player.includes(winners[i][2])){
-                        yagano();
+            if(listaJugadas.includes(COMBINACION_GANADORA[i][0])){
+                if(listaJugadas.includes(COMBINACION_GANADORA[i][1])){
+                    if(listaJugadas.includes(COMBINACION_GANADORA[i][2])){
+                        siGano();
+                        console.log("Alguien ya ganó");
+                        break;
                     }
                 }
             }
@@ -57,62 +62,76 @@ $(document).ready(function(){
 
 
 // aquí marcamos las jugadas
-    $(".casilla").click(function(){
-        switch($(this).text()){
-            case 'X':
-            case 'O':
-                break;
-            default:
-                if(turno % 2 == 1 ){
-                    console.log("Pushea p1");
-                    p1.push(parseInt($(this).text()));
-                    $(this).text('X');
-                    if(p1.length > 2){
-                        ganar(p1);
+    $(".casilla").on({
+        click: function(){
+            switch($(this).text()){
+                case 'X':
+                case 'O':
+                    break;
+                default:
+                    if(turno % 2 == 1 ){
+//                        console.log("Pushea jugadasPlayer1");
+                        jugadasPlayer1.push(parseInt($(this).text()));
+                        $(this).text('X');
+                        if(jugadasPlayer1.length > 2){
+                            ganar(jugadasPlayer1);
+                        }
+                    }else{
+//                        console.log("Pushea jugadasPlayer2");
+                        jugadasPlayer2.push(parseInt($(this).text()));
+                        $(this).text('O');
+                        if(jugadasPlayer2.length > 2){
+                            ganar(jugadasPlayer2);
+                        }
                     }
-                }else{
-                    console.log("Pushea p2");
-                    p2.push(parseInt($(this).text()));
-                    $(this).text('O');
-                    if(p2.length > 2){
-                        ganar(p2);
+                    $(this).css("color" , "black");
+                    //console.log("\nturno: "+turno);
+                    console.log(turno);
+                    if (turno == 1){
+                        $("#btnReset").text("Reset Game");
                     }
-                }
-                $(this).css("color" , "black");
-                //console.log("\nturno: "+turno);
-                turno += 1;
+                    if (turno == 9 && ganador == null){
+                        // empate
+                        console.log("Empatados");
+                    }
+                    ++turno;
+            }
+            console.log("jugadasPlayer1: "+jugadasPlayer1);
+            console.log("jugadasPlayer2: "+jugadasPlayer2);
         }
-        $("#btnReset").text("Reset Game");
-        console.log("p1: "+p1);
-        console.log("p2: "+p2);
     });
 // Clickear Reset
     $("#btnReset").click(function(){
         if (ganador != null){
             $(ganador).stop(true, true);
         }
-        if( $(this).text() == "PERSONAJES"){
+        $(perdedor).removeClass("oculto");
+        if( $(this).text() == TEXTO_ORIGINAL_BOTON){
             cambio();
         }else{
-            $(this).text("PERSONAJES");
+            $(this).text(TEXTO_ORIGINAL_BOTON);
         }
+
         let casillas = $(".casilla").toArray();
         for(var i = 0; i < 9; i++){
             casillas[i].innerText = i+1;
             // poner color de letra transparente
             $(".casilla").css("color" , "transparent");
         }
-        p1=[];// NO juntar
-        p2=[];// NO juntar
-        turno = 1;
-        $(".nombrePersonaje").removeAttr('style');
+
         $("#player1").removeClass("winner");
         $("#player2").removeClass("winner");
-        $("#player1").css("height" , "100px");
-        $("#player2").css("height" , "100px");
+        $("#player1").css("height" , "100%");
+        $("#player2").css("height" , "100%");
         $(".personaje").next().removeAttr('style');
-        $(perdedor).removeClass("oculto");
+        
+        ganador = null;
+        perdedor = null;
+        jugadasPlayer1=[];// NO juntar
+        jugadasPlayer2=[];// NO juntar
+        turno = 1;
     });
+    
 // Animacion Footer
     $(".footer").on({
         mouseenter: function(){
