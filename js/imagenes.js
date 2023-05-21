@@ -40,7 +40,6 @@ $(document).ready(function(){
     function asignarAvatares(selectedPersonaje){
         asignarAvatarElegido($("#player1 img"), selectedPersonaje);
         asignarAvatarRandom($("#player2 img"));
-        
     }
 
 // Se selecciona al personaje y pasamos al juego
