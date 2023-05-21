@@ -1,4 +1,7 @@
-# gato-y-otros
+<h1> Gato Emperifollado</h1>
 
-Este es un proyecto de un juego de Gato (tik tak toe) en JavaScript manipulando el HTML y el CSS.
-El estilo visual no es lo primordial ya que obviamente se puede mejorar.
+<p>Este es un proyecto de un juego de Gato (tik tak toe) en JavaScript manipulando el HTML y el CSS.</p>
+<ul>Esta versión utilizará:
+    <li>JQuery para el manejo de eventos</li>
+    <li><del>BootStrap 5 para el estilo visual</del></li>
+</ul>

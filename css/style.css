@@ -1,0 +1,172 @@
+:root{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    min-width: 365px;
+}
+/* para que el color de gradiente texto haga un ciclo */
+@keyframes background-pan{
+    from{
+        background-position: 0% center;
+    }
+    to{
+        background-position: -200% center;
+    }
+}
+@font-face {
+    font-family: 'Saiyan';
+    src: url('../font/Saiyan-Sans.ttf')
+        format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+body{
+    background-position-y: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Saiyan;
+    padding-bottom: 10vh;
+    height: 100vh;
+    width: 100vw;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+
+}
+
+header{
+    background-image: url(
+        "../images/2_5D.gif"
+    );
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+h1{
+    font-size: 5rem;
+    text-align: center;
+}
+
+h2{
+    font-size: 0rem;
+    color: yellow;
+    -webkit-text-stroke-color : rgb(0, 0, 0);
+    -webkit-text-stroke-width : 1.75px;
+}
+
+.tituloHeader{
+    /* animación del color de texto tiempo 's' (segundos) */
+    animation: background-pan 1000ms linear infinite;
+    /* colores para la gradiente de texto */
+    background: linear-gradient(
+        to right,
+        red,
+        yellow,
+        orange,
+        yellow,
+        red
+    );
+    background-size: 200%;
+    background-clip: initial;
+    -webkit-background-clip: text;
+    /* Color de Letra */
+    -webkit-text-fill-color: transparent;
+    /* Color del Borde de letra */
+    -webkit-text-stroke-color:rgb(0, 0, 0);
+    -webkit-text-stroke-width: 0.75px;
+
+    filter: drop-shadow(0px 10px 15px rgb(255, 255, 255));
+    text-shadow:                   
+             1px -1px 50px rgba(255, 255, 255, 0.5),
+            -1px  1px 50px rgba(255, 255, 255, 0.5),
+            -1px -1px 50px rgba(255, 255, 255, 0.5);
+
+
+}
+
+#personajes{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    height: 35vw;
+    border: 5px dotted black;
+}
+
+#personajes figure{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nombrePersonaje{
+    font-size: 0px;
+}
+
+.personaje{
+    height: 90%;
+    width: auto;
+    max-height: 100%;
+    filter: grayscale(100%) opacity(40%);
+}
+
+.personaje:hover{
+    /* filter: drop-shadow(10px 10px 0px rgb(121, 115, 115)); */
+    filter: drop-shadow(10px 10px 2.5px black);
+    border: 3px double black;
+    background-color: rgba(255, 255, 255, 0.3);
+    
+    background-image:
+        url("../images/destelloAzul.png");
+    background-position-y: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+/* Cheat Codes de Efectos */
+/*{*/
+    /* filter: grayscale(100%); */
+    /* filter: blur(5px); */
+    /* filter: brightness(0.4); */
+    /* filter: contrast(200%); */
+    /* filter: drop-shadow(16px 16px 20px blue); */
+    /* filter: hue-rotate(90deg); */
+    /* filter: invert(75%); */
+    /* filter: opacity(50%); */
+    /* filter: saturate(30%); */
+    /* filter: sepia(60%); */
+    /* transform: scaleX(-1); */
+/*}*/
+
+footer{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0 5%;
+    
+    min-height: 1rem;
+    height: 4vh;
+
+    background-color:rgba(91, 78, 78, 0.18);
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: end;
+}
+
+.disclaimer{
+    font-size: 0rem;
+    left: 0;
+}
+
+a img{
+    height:100%;
+    width: auto;
+}
