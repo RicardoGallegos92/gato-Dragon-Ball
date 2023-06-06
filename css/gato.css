@@ -17,28 +17,39 @@
     max-height: 70vh;
     max-width: 70vh;
     border: 2px dotted black;
+    
     display: grid;
     grid-template-columns: repeat(5, 20%);
     grid-template-rows: repeat(5, 20%);
+    justify-content: center;
 }
 
 .casilla{
     min-height: 100px;
     min-width: 100px;
-/*
-    height: -webkit-fill-available;
-    width: -webkit-fill-available;
-*/
 
     height: 100%;
     width: 100%;
 
-    border: 2px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    cursor: cell!important;
+
     font-size: 8rem;
     color: transparent;
+
+    /* background-color: rgb(240,240,240); */
+    background-color: #f0f0f080 ;
+
+    border-style: solid;
+    border-color: black;
+    border-width: 4px;
+
+    outline-style: solid!important;
+    outline-color: black!important;
+    outline-width: 2px!important;
 }
 
 /*
@@ -111,6 +122,7 @@ E  | | | |
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 #player1 img{
@@ -125,6 +137,7 @@ E  | | | |
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 #player2 img{
