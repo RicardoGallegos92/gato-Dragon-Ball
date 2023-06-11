@@ -7,11 +7,12 @@ paso = 0;
 function moverTitulo() {
     if( paso <= LARGO_TITULO ){
         document.title = '.'.repeat(paso) + TITULO.substring(paso);
-        ++ paso;
+        ++paso;
     }
     else{
         paso = 0;
     }
+    console.log("paso: "+paso);
     setTimeout(moverTitulo, RETRASO_MS);  //llamada recursiva con retraso
 }
 

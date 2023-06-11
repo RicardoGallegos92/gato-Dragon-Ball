@@ -8,8 +8,8 @@ $(document).ready(function(){
     };
     const FOTO_AVATAR_PERSONAJE_ARRAY = Object.values(FOTO_AVATAR_PERSONAJE);
 //  --------------------------------------------
-    console.table(FOTO_AVATAR_PERSONAJE);
-    console.table(FOTO_AVATAR_PERSONAJE_ARRAY);
+//    console.table(FOTO_AVATAR_PERSONAJE);
+//    console.table(FOTO_AVATAR_PERSONAJE_ARRAY);
 //  --------------------------------------------
 
     function cambio(){
@@ -33,7 +33,7 @@ $(document).ready(function(){
     }
     
     function asignarAvatarRandom(casillaJugador) {
-        personajeCOM = Math.round(Math.random()*2);
+        personajeCOM = Math.round(Math.random()*100 % 3);
         casillaJugador.attr("src", FOTO_AVATAR_PERSONAJE_ARRAY[personajeCOM]);
     }
 
