@@ -1,7 +1,7 @@
 const TITULO = "Z Warriors";
+//  espacio de tiempo entre cambio de letras en milisegundos
 const RETRASO_MS = 500;
 paso = 0;
-//  espacio de tiempo entre cambio de letras en milisegundos
 
 // function moverTitulo() {
 //     if( paso <= LARGO_TITULO ){
@@ -19,8 +19,7 @@ paso = 0;
 
 const moverTitulo = () => {
     document.title = TITULO.substring(paso);
-    paso < TITULO.length ? paso++ : paso = 0;
-    console.log("paso: "+paso);
+    paso < TITULO.length-1 ? paso++ : paso = 0;
 }
 
 const shakeIt = setInterval(moverTitulo, RETRASO_MS);
