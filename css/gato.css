@@ -1,8 +1,8 @@
 #zonaJuego{
     width: 95vw;
-    max-height: 70vh;
+    height: 70vh;
     
-    margin: 0 auto;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -11,17 +11,23 @@
 
 .tiktaktoe{
     min-height: 500px;
-    min-width: 500px;
-    width: 100%;
-    height: 100%;
-    max-height: 70vh;
-    max-width: 70vh;
+    aspect-ratio: 1;
+    height: inherit;
+    width: auto;
     border: 2px dotted black;
     
     display: grid;
-    grid-template-columns: repeat(5, 20%);
-    grid-template-rows: repeat(5, 20%);
     justify-content: center;
+
+    grid-template: 20% 20% 20% 20% 20%
+                 / 20% 20% 20% 20% 20%;
+    grid-template-areas:
+    'P1 P1 . . .'
+    '. A1 A2 A3 .'
+    '. B1 B2 B3 .'
+    '. C1 C2 C3 .'
+    '. . . P2 P2'
+    ;
 }
 
 .casilla{
@@ -38,14 +44,13 @@
     cursor: cell!important;
 
     font-size: 8rem;
+    font-family: inherit;
     color: transparent;
 
     /* background-color: rgb(240,240,240); */
     background-color: #f0f0f080 ;
 
-    border-style: solid;
-    border-color: black;
-    border-width: 4px;
+    border: 4px solid black;
 
     outline-style: solid!important;
     outline-color: black!important;
@@ -62,89 +67,78 @@ E  | | | |
 */
 /* Clase para agrandar al ganador */
 .winner{
+    height: 100%;
     grid-row: 1 / span 5 !important;
     grid-column: 1 / span 5 !important;
-    height: 100%;
 }
 /* Clase para ocultar cosas */
 .oculto{
     display: none !important;
 }
 
+.A1{
+    grid-area: A1;
+}
+
+.A2{
+    grid-area: A2;
+}
+
+.A3{
+    grid-area: A3;
+}
+
+.B1{
+    grid-area: B1;
+}
+
 .B2{
-    grid-row: 2;
-    grid-column: 2;
+    grid-area: B2;
 }
 
 .B3{
-    grid-row: 2;
-    grid-column: 3;
+    grid-area: B3;
 }
 
-.B4{
-    grid-row: 2;
-    grid-column: 4;
+.C1{
+    grid-area: C1;
 }
 
 .C2{
-    grid-row: 3;
-    grid-column: 2;
+    grid-area: C2;
 }
 
 .C3{
-    grid-row: 3;
-    grid-column: 3;
-}
-
-.C4{
-    grid-row: 3;
-    grid-column: 4;
-}
-
-.D2{
-    grid-row: 4;
-    grid-column: 2;
-}
-
-.D3{
-    grid-row: 4;
-    grid-column: 3;
-}
-
-.D4{
-    grid-row: 4;
-    grid-column: 4;
+    grid-area: C3;
 }
 
 #player1{
-    grid-row: 1;
-    grid-column: 1 / span 2;
+    grid-area: P1;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-}
 
-#player1 img{
-    height: 100%;
-    width: auto;
-    filter: drop-shadow(-3px -2px lightblue);
+    &>img{
+        height: 100%;
+        width: auto;
+        filter: drop-shadow(-3px -2px lightblue);
+    }
 }
 
 #player2{
-    grid-row: 5;
-    grid-column: 4 / span 2;
+    grid-area: P2;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-}
 
-#player2 img{
-    height: 100%;
-    width: auto;
-    transform: scaleX(-1);
-    filter: drop-shadow(-4px 4px lightblue);
+    &>img{
+        height: 100%;
+        width: auto;
+        transform: scaleX(-1);
+        filter: drop-shadow(-4px 4px lightblue);
+    }
 }
 
 #resetZone{
@@ -156,7 +150,9 @@ E  | | | |
 }
 
 #btnReset{
-    height: 6rem;
-    width: 20rem;
+    height:fit-content;
+    width:fit-content;
+    padding: 0.25rem 1rem;
     font-size: 4rem;
+    font-family: inherit;
 }
